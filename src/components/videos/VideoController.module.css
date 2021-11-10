@@ -1,0 +1,50 @@
+.container {
+  height: 310px;
+  width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: gray;
+}
+
+.video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.imageContainer {
+  height: 375px;
+  width: 100%;
+  top: 0px;
+  position: absolute;
+
+  /* TODO: for testing visuals */
+  /* opacity: 0.5;
+  background-color: yellow; */
+}
+
+.imageOne,
+.imageTwo,
+.imageThree {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+}
+
+.imageOne {
+  top: 2.5%;
+  left: 2.5%;
+}
+
+.imageTwo {
+  top: 2.5%;
+  left: 93%;
+}
+
+.imageThree {
+  top: 45%;
+  left: 45%;
+}
