@@ -1,4 +1,10 @@
 .container {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.videoContainer {
   height: 310px;
   width: 600px;
   margin: 2rem auto;
@@ -7,12 +13,14 @@
   display: grid;
   grid-template-columns: 1fr;
   background-color: gray;
+  z-index: 0;
 }
 
 .video {
   height: 100%;
   width: 100%;
   position: absolute;
+  z-index: 5;
 }
 
 .imageContainer {
@@ -32,6 +40,7 @@
   height: 2rem;
   width: 2rem;
   position: absolute;
+  z-index: 10;
 }
 
 .imageOne {
@@ -47,4 +56,12 @@
 .imageThree {
   top: 45%;
   left: 45%;
+}
+
+.displayImage {
+  display: block;
+}
+
+.hideImage {
+  display: none;
 }

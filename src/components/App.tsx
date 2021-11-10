@@ -8,9 +8,7 @@ function App() {
         <h2 className={styles.headerTitle}>Virti Video</h2>
       </div>
 
-      <div className={styles.contentContainer}>
-        <VideoController />
-      </div>
+      <VideoController />
     </div>
   );
 }
