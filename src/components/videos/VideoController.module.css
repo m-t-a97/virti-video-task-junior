@@ -4,6 +4,8 @@
   padding: 1rem;
 }
 
+/* Video */
+
 .videoContainer {
   height: 310px;
   width: 600px;
@@ -20,18 +22,23 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  z-index: 5;
 }
+
+/* Image */
 
 .imageContainer {
   height: 375px;
   width: 100%;
   top: 0px;
   position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  transition: opacity 0.5s, background-color 0.5s;
+}
 
-  /* TODO: for testing visuals */
-  /* opacity: 0.5;
-  background-color: yellow; */
+.imageContainer:hover {
+  opacity: 0.15;
+  background-color: green;
 }
 
 .imageOne,
@@ -64,4 +71,60 @@
 
 .hideImage {
   display: none;
+}
+
+/* Buttons */
+
+.buttonsContainer {
+  width: 900px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.videoControllerButton {
+  width: 10rem;
+  margin: auto;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.videoControllerButtonOne {
+  background-color: #059669;
+}
+
+.videoControllerButtonOne:hover {
+  background-color: #34d399;
+}
+
+.videoControllerButtonTwo {
+  background-color: #dc2626;
+}
+
+.videoControllerButtonTwo:hover {
+  background-color: #f87171;
+}
+
+.videoControllerButtonThree {
+  background-color: #d97706;
+}
+
+.videoControllerButtonThree:hover {
+  background-color: #fbbf24;
+}
+
+.videoControllerButtonFour {
+  background-color: #4f46e5;
+}
+
+.videoControllerButtonFour:hover {
+  background-color: #818cf8;
 }

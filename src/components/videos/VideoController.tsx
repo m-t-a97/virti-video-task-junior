@@ -61,6 +61,26 @@ function VideoController() {
     }
   };
 
+  const onPlayVideo = (): void => {
+    videoRef.current!.play();
+  };
+
+  const onPauseVideo = (): void => {
+    videoRef.current!.pause();
+  };
+
+  const onRewindVideoByFiveSeconds = (): void => {
+    if (videoRef.current!.duration >= 5 && videoRef.current!.currentTime >= 5) {
+      videoRef.current!.currentTime -= 5;
+    }
+  };
+
+  const onForwardVideoByFiveSeconds = (): void => {
+    if (videoRef.current!.currentTime <= videoRef.current!.duration - 5) {
+      videoRef.current!.currentTime += 5;
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.videoContainer}>
@@ -109,6 +129,52 @@ function VideoController() {
             )}
           />
         </div>
+      </div>
+
+      <div className={styles.buttonsContainer}>
+        <button
+          type="button"
+          className={classnames(
+            styles.videoControllerButton,
+            styles.videoControllerButtonOne
+          )}
+          onClick={onPlayVideo}
+        >
+          Play/Resume
+        </button>
+
+        <button
+          type="button"
+          className={classnames(
+            styles.videoControllerButton,
+            styles.videoControllerButtonTwo
+          )}
+          onClick={onPauseVideo}
+        >
+          Pause
+        </button>
+
+        <button
+          type="button"
+          className={classnames(
+            styles.videoControllerButton,
+            styles.videoControllerButtonThree
+          )}
+          onClick={onRewindVideoByFiveSeconds}
+        >
+          Rewind (-5)
+        </button>
+
+        <button
+          type="button"
+          className={classnames(
+            styles.videoControllerButton,
+            styles.videoControllerButtonFour
+          )}
+          onClick={onForwardVideoByFiveSeconds}
+        >
+          Forward (+5)
+        </button>
       </div>
     </div>
   );
