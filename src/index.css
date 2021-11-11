@@ -6,6 +6,11 @@ body {
   width: 100%;
   font-family: "Roboto", sans-serif;
   background-color: #282c34;
+  transition: background-color 300ms ease-in-out;
+}
+
+body.alternate-background {
+  background-color: #4b5563;
 }
 
 #root {

@@ -2,9 +2,12 @@ import { useEffect, useRef, useState } from "react";
 
 import classnames from "classnames";
 
+import useVideoHoverEffect from "../../../hooks/useVideoHoverEffect";
 import styles from "./VideoController.module.css";
 
 function VideoController() {
+  useVideoHoverEffect();
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const [showImageOne, setShowImageOne] = useState<boolean>(false);
@@ -84,7 +87,7 @@ function VideoController() {
   return (
     <div className={styles.container}>
       <div className={styles.videoContainer}>
-        <video controls className={styles.video} ref={videoRef}>
+        <video id="video" controls className={styles.video} ref={videoRef}>
           <source type="video/mp4" src="/Big_Buck_Bunny_1080_10s_5MB.mp4" />
           Your browser does not support the video tag.
         </video>
