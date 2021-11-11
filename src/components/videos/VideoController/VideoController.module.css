@@ -1,33 +1,60 @@
 .container {
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
+  margin: 1rem auto;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }
 
 /* Video */
 
 .videoContainer {
-  height: 310px;
-  width: 600px;
+  height: 200px;
+  width: 350px;
   margin: 2rem auto;
-  padding: 2rem;
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  background-color: gray;
   z-index: 0;
+  transition: width 300ms;
+  background-color: gray;
 }
 
 .video {
   height: 100%;
   width: 100%;
+  display: block;
   position: absolute;
+}
+
+@media (min-width: 640px) {
+  .videoContainer {
+    height: 280px;
+    width: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  .videoContainer {
+    height: 340px;
+    width: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .videoContainer {
+    height: 395px;
+    width: 700px;
+  }
 }
 
 /* Image */
 
 .imageContainer {
-  height: 375px;
+  height: 100%;
   width: 100%;
   top: 0px;
   position: absolute;
@@ -44,8 +71,8 @@
 .imageOne,
 .imageTwo,
 .imageThree {
-  height: 2rem;
-  width: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
   position: absolute;
   z-index: 10;
 }
@@ -57,7 +84,7 @@
 
 .imageTwo {
   top: 2.5%;
-  left: 93%;
+  left: 90%;
 }
 
 .imageThree {
@@ -73,28 +100,48 @@
   display: none;
 }
 
+@media (min-width: 640px) {
+  .imageOne,
+  .imageTwo,
+  .imageThree {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
 /* Buttons */
 
 .buttonsContainer {
-  width: 900px;
-  margin: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
   padding: 1rem;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: start;
   flex-wrap: wrap;
 }
 
 .videoControllerButton {
   width: 10rem;
-  margin: auto;
+  margin: 1rem auto;
   height: 2.5rem;
   border: none;
   border-radius: 0.5rem;
   font-weight: bold;
   font-size: 18px;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .buttonsContainer {
+    flex-direction: row;
+  }
+
+  .videoControllerButton {
+    margin: 1rem;
+  }
 }
 
 .videoControllerButtonOne {

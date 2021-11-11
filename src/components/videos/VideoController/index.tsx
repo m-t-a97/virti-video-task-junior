@@ -84,7 +84,7 @@ function VideoController() {
   return (
     <div className={styles.container}>
       <div className={styles.videoContainer}>
-        <video className={styles.video} controls ref={videoRef}>
+        <video controls className={styles.video} ref={videoRef}>
           <source type="video/mp4" src="/Big_Buck_Bunny_1080_10s_5MB.mp4" />
           Your browser does not support the video tag.
         </video>

@@ -1,0 +1,10 @@
+.header {
+  padding: 0.5rem;
+  background-color: #d1d5db;
+}
+
+.headerTitle {
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
