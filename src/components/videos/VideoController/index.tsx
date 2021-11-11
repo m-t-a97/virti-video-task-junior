@@ -140,7 +140,7 @@ function VideoController() {
           )}
           onClick={onPlayVideo}
         >
-          Play/Resume
+          Play / Resume
         </button>
 
         <button
