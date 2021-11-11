@@ -2,12 +2,9 @@ import { useEffect, useRef, useState } from "react";
 
 import classnames from "classnames";
 
-import useVideoHoverEffect from "../../../hooks/useVideoHoverEffect";
 import styles from "./VideoController.module.css";
 
 function VideoController() {
-  useVideoHoverEffect();
-
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const [showImageOne, setShowImageOne] = useState<boolean>(false);
@@ -23,6 +20,16 @@ function VideoController() {
   useEffect(() => {
     videoRef.current!.ontimeupdate = onVideoTimeUpdate;
   });
+
+  useEffect(() => {
+    videoRef.current?.addEventListener("mouseenter", onEnterHoverVideo);
+    videoRef.current?.addEventListener("mouseleave", onLeaveHoverVideo);
+
+    return () => {
+      videoRef.current?.removeEventListener("mouseenter", onEnterHoverVideo);
+      videoRef.current?.removeEventListener("mouseleave", onLeaveHoverVideo);
+    };
+  }, []);
 
   const onVideoTimeUpdate = (): void => {
     const currentTime = Math.round(videoRef.current!.currentTime * 10) / 10;
@@ -82,6 +89,14 @@ function VideoController() {
     if (videoRef.current!.currentTime <= videoRef.current!.duration - 5) {
       videoRef.current!.currentTime += 5;
     }
+  };
+
+  const onEnterHoverVideo = (): void => {
+    document.querySelector("body")?.classList.add("alternate-background");
+  };
+
+  const onLeaveHoverVideo = (): void => {
+    document.querySelector("body")?.classList.remove("alternate-background");
   };
 
   return (
